@@ -65,3 +65,9 @@ serve(async (request) => {
   return response;
 });
 ```
+
+### 使用案例
+
+| 公众号名        | 二维码（如果失效可以搜名字） |
+| --------------- | ---------------------------- |
+| iMean AIGC 助手 | ![](docs/img/aigc.png)       |
