@@ -13,7 +13,7 @@ import {
   WeixinTextMessage,
   WeixinSubscribeEvent,
   WeixinTextReply,
-} from 'https://github.com/manyuanrong/deno-weixin-sdk/raw/main/mod.ts';
+} from 'https://github.com/manyuanrong/deno-weixin-sdk/raw/v1.0.2/mod.ts';
 
 // 微信AccessToken管理器，该类用于管理SDK中调用微信API的accessToken
 // 由于微信的token只能有唯一的一个，且生成新的token会使旧的token失效，

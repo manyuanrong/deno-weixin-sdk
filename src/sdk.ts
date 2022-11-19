@@ -11,8 +11,7 @@ import {
   WeixinCustomMenuSubButton,
   _createCustomMenu,
 } from './menu.ts';
-import { parseMessageFromXml } from './message.ts';
-import { WeixinBaseMessage } from './mod.ts';
+import { parseMessageFromXml, WeixinBaseMessage } from './message.ts';
 import { QrCodeActionName, _generateQrCode } from './qrcode.ts';
 import { WeixinReply } from './reply.ts';
 import { WeixinSendContent, _sendMessage } from './send.ts';

@@ -71,7 +71,8 @@ export type WeixinSendContent =
   | WeixinSendVideoContent
   | WeixinSendVoiceContent
   | WeixinSendImageContent
-  | WeixinSendTextContent;
+  | WeixinSendTextContent
+  | WeixinSendMiniProgramPageContent;
 
 export async function _sendMessage(
   accessToken: string,
