@@ -54,6 +54,17 @@ export interface WeixinSendMenuContent {
   tail_content?: string;
 }
 
+export interface WeixinSendMiniProgramPageContent {
+  touser: string;
+  msgtype: 'miniprogrampage';
+  miniprogrampage: {
+    title: string;
+    appid: string;
+    pagepath: string;
+    thumb_media_id: string;
+  };
+}
+
 export type WeixinSendContent =
   | WeixinSendMenuContent
   | WeixinSendMusicContent
