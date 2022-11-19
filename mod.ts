@@ -1,4 +1,5 @@
 export * from './src/event.ts';
+export * from './src/error.ts';
 export * from './src/message.ts';
 export * from './src/reply.ts';
 export * from './src/sdk.ts';
