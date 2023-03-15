@@ -13,7 +13,7 @@ export async function checkError(response: Response) {
       throw new TokenExpiredError(json.errmsg);
     } else {
       if (json.errcode === 43004) throw new UserUnsubscribedError();
-      throw new Error(json.errmsg);
+      throw new Error(JSON.stringify(json));
     }
   }
 

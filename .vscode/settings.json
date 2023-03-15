@@ -1,4 +1,11 @@
 {
   "deno.enable": true,
-  "deno.unstable": true
+  "deno.unstable": true,
+  "cSpell.words": [
+    "echostr",
+    "errcode",
+    "groupid",
+    "tagid",
+    "unionid"
+  ]
 }

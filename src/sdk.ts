@@ -1,4 +1,5 @@
 import { logger, parse } from './deps.ts';
+import { checkError } from './error.ts';
 import { parseEventFromXml, WeixinBaseEvent } from './event.ts';
 import {
   _uploadTempMedia,
@@ -52,6 +53,15 @@ export class WeixinSdk {
    */
   setMessageHandler(handler: WeixinHandler<WeixinBaseMessage>) {
     this.messageHandler = handler;
+  }
+
+  /**
+   * 获取accessToken
+   * @param fn
+   * @returns
+   */
+  async withToken<T>(fn: (token: string) => Promise<T>): Promise<T> {
+    return await this.tokenManager.withToken<T>(fn);
   }
 
   /**
@@ -192,6 +202,28 @@ export class WeixinSdk {
         sceneStr,
         sceneId
       );
+    });
+  }
+
+  async getUserInfo(openId: string, lang: 'zh_CN' | 'zh_TW' | 'en' = 'en') {
+    return await this.withToken(async (token) => {
+      const result = await fetch(
+        `https://api.weixin.qq.com/cgi-bin/user/info?access_token=${token}&openid=${openId}&lang=${lang}`
+      );
+      const json = await checkError(result);
+      return json as {
+        subscribe: number;
+        openid: string;
+        language: string;
+        subscribe_time: number;
+        unionid?: string;
+        remark: string;
+        groupid: number;
+        tagid_list: number[];
+        subscribe_scene: string;
+        qr_scene: string;
+        qr_scene_str: string;
+      };
     });
   }
 }
