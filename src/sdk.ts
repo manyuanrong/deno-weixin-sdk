@@ -11,6 +11,7 @@ import {
   WeixinCustomMenuItem,
   WeixinCustomMenuSubButton,
   _createCustomMenu,
+  _deleteCustomMenu,
 } from './menu.ts';
 import { parseMessageFromXml, WeixinBaseMessage } from './message.ts';
 import { QrCodeActionName, _generateQrCode } from './qrcode.ts';
@@ -104,7 +105,7 @@ export class WeixinSdk {
       });
     }
 
-    return new Response('');
+    return new Response('success');
   }
 
   /**
@@ -127,6 +128,13 @@ export class WeixinSdk {
   ) {
     return await this.tokenManager.withToken(async (token) => {
       return await _createCustomMenu(token, buttons);
+    });
+  }
+
+  /** 删除自定义菜单 */
+  async deleteCustomMenu() {
+    return await this.tokenManager.withToken(async (token) => {
+      return await _deleteCustomMenu(token);
     });
   }
 

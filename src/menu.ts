@@ -44,3 +44,11 @@ export async function _createCustomMenu(
     )
   );
 }
+
+export async function _deleteCustomMenu(accessToken: string) {
+  await checkError(
+    await fetch(
+      `https://api.weixin.qq.com/cgi-bin/menu/delete?access_token=${accessToken}`
+    )
+  );
+}
