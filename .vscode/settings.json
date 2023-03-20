@@ -5,7 +5,15 @@
     "echostr",
     "errcode",
     "groupid",
+    "hqmusicurl",
+    "miniprogrampage",
+    "msgmenu",
+    "msgtype",
+    "musicurl",
+    "pagepath",
+    "picurl",
     "tagid",
+    "touser",
     "unionid"
   ]
 }

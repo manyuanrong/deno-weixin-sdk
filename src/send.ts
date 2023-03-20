@@ -29,6 +29,19 @@ export interface WeixinSendVideoContent {
   };
 }
 
+export interface WeixinSendNewsContent {
+  touser: string;
+  msgtype: 'news';
+  news: {
+    articles: {
+      title: string;
+      description: string;
+      url: string;
+      picurl: string;
+    }[];
+  };
+}
+
 export interface WeixinSendMusicContent {
   touser: string;
   msgtype: 'video';
@@ -72,6 +85,7 @@ export type WeixinSendContent =
   | WeixinSendVoiceContent
   | WeixinSendImageContent
   | WeixinSendTextContent
+  | WeixinSendNewsContent
   | WeixinSendMiniProgramPageContent;
 
 export async function _sendMessage(
